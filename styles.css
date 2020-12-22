@@ -1,0 +1,90 @@
+body {
+    background-color: green;
+}
+
+.h5 {
+    flex: auto;
+    text-align: center;
+    padding: 0;
+    border: 0;
+}
+
+h1 {
+    text-align: center;
+    color: ivory;
+}
+
+.enterNumber {
+    margin: 3px 3px;
+    text-align: center;
+}
+
+.Playgame {
+    color: #FFF;
+    background-color: #232323;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+#inputNumber {
+    box-sizing: 4px;
+    height: 25px;
+    width: 30px;
+}
+
+#inputNumber {
+    box-sizing: content-box;
+    border: solid 35px;
+    width: 35px;
+    background-color: wheat;
+    border: 10px;
+    text-align: center;
+}
+
+.Guess {
+    box-sizing: content-box;
+    border: solid 35px;
+    width: 35px;
+    background-color: wheat;
+    border: 1px;
+    text-align: center;
+}
+
+.low {
+    box-sizing: content-box;
+    border: solid 35px;
+    width: 35px;
+    background-color: wheat;
+    border: 1px;
+    text-align: center;
+}
+
+.high {
+    box-sizing: content-box;
+    border: solid 35px;
+    width: 35px;
+    background-color: wheat;
+    border: 1px;
+    text-align: center;
+}
+
+.EnterCancel {
+    display: flex;
+    justify-content: center;
+}
+
+.pargraph {
+    margin-top: 4px;
+    background-color: rgb(230, 63, 63);
+    display: flex;
+    justify-content: center;
+}
+
+.Number {
+    box-sizing: 5px;
+}
