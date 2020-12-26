@@ -37,7 +37,7 @@ function ramdomNumber() {
     Winner.textContent = '';
     enter.disabled = false;
     cancel.disabled = false;
-
+    inputNumber.focus()
 }
 let tentar = 0;
 for (let i = 1; i > tentar + 1; i++) {
@@ -63,17 +63,25 @@ function game() {
     } else if (guess < numbers) {
         color1.style.backgroundColor = 'blue';
         low.innerText = inputNumber.value;
+        high.innerText = '';
+        inputNumber.value = '';
+        inputNumber.focus()
     } else if (guess > numbers) {
         color2.style.backgroundColor = 'yellow';
         high.innerText = inputNumber.value;
+        low.innerText = '';
+        inputNumber.value = '';
+        inputNumber.focus()
     }
     if (tentar === 4 || guess === numbers) {
         resetFunc();
         desabilit();
         visivel();
+
     }
 
 }
+
 
 
 enter.addEventListener('click', function() {
