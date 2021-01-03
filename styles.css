@@ -2,6 +2,20 @@ body {
     background-color: green;
 }
 
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .h5 {
     flex: auto;
     text-align: center;
@@ -27,6 +41,24 @@ h2 {
     margin-bottom: 20px;
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18
 }
+
+.ModPlaygame {
+    color: #FFF;
+    background-color: #FFF;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+
+
+/* #modal {
+    display: flex;
+    align-self: center;
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    display: inline-block;
+    justify-content: center;
+} */
 
 .button {
     display: flex;
@@ -84,6 +116,15 @@ h2 {
     text-align: center;
 }
 
+.acertou {
+    box-sizing: content-box;
+    border: solid 35px;
+    width: 35px;
+    background-color: wheat;
+    border: 1px;
+    text-align: center;
+}
+
 .EnterCancel {
     display: flex;
     justify-content: center;
@@ -123,4 +164,62 @@ h2 {
 
 .Number {
     box-sizing: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    margin: 60px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* .modal-content {
+    background-color: black;
+    margin: auto;
+    border: 1px solid #888;
+} */
+
+h1 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: "Source Sans Pro";
+    font-size: 2em;
+    font-weight: 50%;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.lastPara {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.lastPara2 {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.preto {
+    text-emphasis-color: white;
 }
