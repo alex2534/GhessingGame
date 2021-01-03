@@ -9,28 +9,33 @@ const cancel = document.querySelector('.cancel');
 const color1 = document.querySelector('.color1');
 const color2 = document.querySelector('.color2');
 const acertou = document.querySelector('.acertou');
-const tente = document.querySelector('.tente');
 const tentativas = document.querySelector('.tenta');
 const body = document.querySelector('.color');
 const Amarelo = document.querySelector('.amarelo');
 const primerio = document.querySelector('.primeiro');
 const Segundo = document.querySelector('.Segundo')
-const NumeroTentativas = document.querySelector('.NumeroTentativas')
+const NumeroTentativas = document.querySelector('.NumeroTentativas');
+document.querySelector('.tente').style.display = 'none'
 const h5 = document.querySelector('.h5')
 const fases = document.querySelector('.fases')
+const tentenovament = document.querySelector('.tentenovament').value;
+
+function windowShow() {
+    document.querySelector('.tente').style.display = "block"
+}
 
 
+function windowHide() {
+    document.querySelector('.tente').style.display = 'none'
+}
 
-let apagar = tente;
-apagar.style.display = 'none'
+
 enter.disabled = true;
 cancel.disabled = true;
 const guessNumber = inputNumber;
 let wongame = 0;
 let counter = 0;
 let wonNum = acertou;
-
-
 
 let numbers;
 let guess;
@@ -44,15 +49,14 @@ const resetFunc = function() {
     high.innerText = '';
     acertou.style.backgroundColor = 'rgb(230, 63, 63)'
     tentativas.textContent = tentativas.value = ''
-    apagar.style.display = 'none'
     Winner.textContent = '';
     enter.disabled = false;
     cancel.disabled = false;
     inputNumber.focus()
     primerio.innerHTML = ''
-        // acertou.style.backgroundColor = 'none';
 
 }
+
 
 
 function ramdomNumber() {
@@ -61,7 +65,7 @@ function ramdomNumber() {
     tentar = 4;
     console.log(numbers)
     resetFunc()
-
+    windowHide();
 }
 
 function SecondRandom() {
@@ -70,6 +74,7 @@ function SecondRandom() {
     tentar = 3;
     console.log(numbers)
     resetFunc()
+    windowHide();
 }
 
 function ThirdRamdom() {
@@ -99,17 +104,13 @@ const desabilit = function() {
     cancel.disabled = true;
 }
 
-const visivel = function() {
-    console.log('block')
-    apagar.style.display = 'block'
-}
-
 function game() {
     tentar -= 1;
     ganhador++;
+    if (guess === numbers || ganhador === 5) {
 
-    if (ganhador === 5) {
         desabilit()
+
         console.log('numero  4')
         if (ganhador === 4) {
             desabilit()
@@ -117,26 +118,25 @@ function game() {
         }
         if (ganhador === 3) {
             desabilit()
+            resetFunc()
             console.log('hello 3')
         }
         if (ganhador === 1) {
             desabilit()
             console.log('hello 1')
         }
+
         console.log('ganhador', ganhador)
     }
-    console.log('ganhador', ganhador)
-    console.log('tentando', tentar)
     if (guess === numbers) {
+        windowShow()
         acertou.style.backgroundColor = 'pink'
         Winner.textContent = guess;
-        console.log(guess)
-        tente.textContent = tente;
         low.innerHTML = ''
         high.innerHTML = ''
         color2.style.backgroundColor = 'rgb(230, 63, 63)'
         color1.style.backgroundColor = 'rgb(230, 63, 63)';
-        inputNumber.value = '';
+        inputNumber.textContent = inputNumber.value = '';
         desabilit();
         Playgame.disabled = false;
     } else if (guess < numbers) {
@@ -171,12 +171,11 @@ Playgame.addEventListener('click', function() {
     if (resetGame === 1) {
         ramdomNumber()
         resetFunc()
-        tente.innerHTML = 4;
         fases.innerHTML = 'primeira';
         resetGame++;
         console.log('counter', resetGame)
         Playgame.disabled = true;
-
+        windowHide()
     } else if (resetGame === 2) {
 
         SecondRandom()
@@ -187,7 +186,7 @@ Playgame.addEventListener('click', function() {
         resetGame++;
         console.log('counter', resetGame);
         Playgame.disabled = true;
-
+        windowHide()
 
 
     } else if (resetGame === 3) {
@@ -199,7 +198,7 @@ Playgame.addEventListener('click', function() {
         NumeroTentativas.innerHTML = 2;
         console.log(resetGame)
         Playgame.disabled = true;
-
+        windowHide()
 
 
     } else if (resetGame === 4) {
@@ -212,8 +211,9 @@ Playgame.addEventListener('click', function() {
         resetGame++;
         console.log(resetGame)
         Playgame.disabled = true;
-
+        windowHide()
     } else if (resetGame === 5) {
+        windowHide()
         return ramdomNumber()
     }
 })
