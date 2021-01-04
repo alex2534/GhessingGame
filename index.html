@@ -15,8 +15,9 @@
         <h2>Alex Nascimento Guessing Game </h2>
     </div>
     <div class="h5">
-        <h5> Click Start para jogar e entre um numéro entre &nbsp<span class="primeiro">&nbsp</span>1 & &nbsp<span class="Segundo">10.</span>&nbsp <br> Você tem &nbsp <span class="NumeroTentativas">4</span>&nbsp tentativas para acertar. Boa sorte !!!</h5>
         <h5>O jogo tem 4 fases que vai aumentando a dificuldade a cada fase. Vamos tentar!!!</h5>
+        <h5> Click Start para jogar e entre um numéro entre &nbsp<span class="primeiro">&nbsp</span>1 & &nbsp<span class="Segundo">10.</span>&nbsp <br> Você tem &nbsp <span class="NumeroTentativas">4</span>&nbsp tentativas para acertar. Boa sorte !!!</h5>
+
         <h5>E click no Enter para checar o resultado</h5>
         <h5>Você esta na <span class="fases">primeira</span> fase</h5>
     </div>
@@ -25,8 +26,15 @@
     <div class="button">
         <button class="Playgame">Start</button>
     </div>
+
+    <span class="click" style="display: none;">Você não acertou o numero !!! <br> Tente novamente.</span>
+    <div class="recomecar" style="display: none;">
+        <button class="Sbutton">Recomeçar</button>
+    </div>
     <div class="tente">
-        <p class="tentenovament">Parabens você acertou, mas você ainda tem mas três fases</p>
+        <p class="tentenovament">Parabens você acertou, mas você ainda tem mas
+            <span class="SecondFases"></span> fases para continuar click no Start</p>
+        <p class="parabens " style="display: none;">Parabens você completou todas as fases</p>
     </div>
     <div class="enterNumber">
         <p class="NumeroA">

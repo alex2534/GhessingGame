@@ -2,20 +2,6 @@ body {
     background-color: green;
 }
 
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .h5 {
     flex: auto;
     text-align: center;
@@ -49,20 +35,25 @@ h2 {
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
 }
 
-
-/* #modal {
-    display: flex;
-    align-self: center;
-    width: 30rem;
-    height: 30rem;
-    display: flex;
-    display: inline-block;
-    justify-content: center;
-} */
-
 .button {
     display: flex;
     justify-content: center;
+}
+
+.click {
+    text-align: center;
+    text-emphasis-color: white;
+}
+
+.recomecar {
+    text-align: center;
+}
+
+.Sbutton {
+    color: #FFF;
+    background-color: #232323;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18
 }
 
 #inputNumber {
@@ -147,7 +138,7 @@ h2 {
     background-color: white;
     text-align: center;
     margin: 0 auto;
-    width: 150px;
+    width: 60%;
 }
 
 .NumeroA {
@@ -165,25 +156,6 @@ h2 {
 .Number {
     box-sizing: 5px;
 }
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    margin: 60px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-
-/* .modal-content {
-    background-color: black;
-    margin: auto;
-    border: 1px solid #888;
-} */
 
 h1 {
     position: absolute;
