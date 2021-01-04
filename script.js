@@ -109,6 +109,8 @@ function SecondRandom() {
     console.log(numbers)
     resetFunc();
 
+
+
 }
 
 function ThirdRamdom() {
@@ -129,8 +131,12 @@ function fourthRancom() {
 
 }
 
-let ganhador = 0;
+let ganhador = 1;
+let ganhador1 = 1;
+let ganhador2 = 1;
+let ganhador3 = 1;
 let tentar;
+
 for (let i = 1; i > counter + 1; i++) {
     console.log(i)
     counter++;
@@ -140,54 +146,135 @@ const desabilit = function() {
     cancel.disabled = true;
 }
 
+// function countdown01() {
+//     if (ganhador === 3) {
+//         Playgame.disabled = true;
+//         PlaygameShow()
+//         desabilit()
+//         recomecar();
+//         click();
+//     }
+//     if (guess === numbers) {
+//         return SecondRandom()
+
+//     }
+//     ganhador++;
+//     console.log('second function')
+//     console.log('ganhador', ganhador)
+// }
+
+
+// function countdown() {
+//     ganhador = 0;
+//     if (ganhador === 2) {
+//         console.log(ganhador)
+//         Playgame.disabled = true;
+//         PlaygameShow()
+//         desabilit()
+//         recomecar();
+//         click();
+//         resetFunc()
+//         console.log('ganhador1', ganhador1)
+
+//     } else if (guess === numbers) {
+//         return countdown1()
+
+//     }
+//     ganhador++;
+//     console.log('segunda function')
+//     console.log('ganhador1', ganhador1)
+// }
+
+
+// function countdown1() {
+//     ganhador2 = 0;
+//     if (ganhador2 === 1) {
+//         Playgame.disabled = true;
+//         PlaygameShow()
+//         desabilit()
+//         recomecar();
+//         click();
+//         resetFunc()
+//     } else if (guess === numbers) {
+//         return countdown2();
+//         console.log('quarta funciton')
+//     }
+//     ganhador2++;
+//     console.log('ga2', ganhador2)
+// }
+
+// function countdown2() {
+//     ganhador3 = 0;
+//     if (ganhador3 === 0) {
+//         Playgame.disabled = true;
+//         desabilit()
+//         recomecar();
+//         click();
+
+//     } else if (guess === numbers) {
+//         return ramdomNumber();
+
+//     }
+//     ganhador3++;
+//     console.log('ganhador3', ganhador3)
+
+// }
+
 
 function game() {
+
     tentar -= 1;
-    ganhador++;
-    if (ganhador === 4) {
+
+
+
+
+    if (ganhador1 === 4) {
+        console.log('ganhador1', ganhador1)
         Playgame.disabled = true;
         PlaygameShow()
         desabilit()
         recomecar();
         click();
-        console.log(ganhador)
-        ganhador = 1;
-        if (ganhador === 3) {
-            console.log(ganhador)
-            Playgame.disabled = true;
-            PlaygameShow()
-            desabilit()
-            recomecar();
-            click();
-            resetFunc()
-            console.log('hello 3')
-            ganhador = 0;
-            console.log('ganhador 3', ganhador)
-            ganhador = 1;
-        }
-        if (ganhador === 2) {
-            Playgame.disabled = true;
-            PlaygameShow()
-            desabilit()
-            recomecar();
-            click();
-            ganhador = 0;
-            console.log('hello 3')
-            console.log('ganhador 3', ganhador)
-            ganhador = 1;
-        }
-        ganhador = 3;
-        if (ganhador === 1) {
-            Playgame.disabled = true;
-            desabilit()
-            recomecar();
-            click();
-            console.log('hello 1')
-            console.log('ganhador 3', ganhador)
-        }
+        ganhador1 = 1;
+        ganhador2 = 1;
+        ganhador3 = 1;
     }
-    console.log('ganhador', ganhador)
 
+
+
+    if (ganhador2 === 3) {
+        Playgame.disabled = true;
+        PlaygameShow()
+        desabilit()
+        recomecar();
+        click();
+        resetFunc()
+        console.log('ganhador2', ganhador2)
+    }
+
+
+
+    if (ganhador3 === 2) {
+        console.log('ganhador3', ganhador3)
+        Playgame.disabled = true;
+        PlaygameShow()
+        desabilit()
+        recomecar();
+        click();
+        resetFunc()
+    }
+    if (ganhador === 1) {
+        console.log('ganhador3', ganhador)
+        Playgame.disabled = true;
+        PlaygameShow()
+        desabilit()
+        recomecar();
+        click();
+        resetFunc()
+    }
+
+
+    console.log(ganhador1)
     if (guess === numbers) {
         windowShow()
         Playgame.disabled = false;
@@ -217,6 +304,10 @@ function game() {
         inputNumber.focus()
 
     }
+    ganhador++;
+    ganhador1++;
+    ganhador2++;
+    ganhador3++;
 
 }
 Sbutton.addEventListener('click', function() {
@@ -230,6 +321,7 @@ Sbutton.addEventListener('click', function() {
     ramdomNumber();
     restall()
 
+
 })
 
 function restall() {
@@ -241,10 +333,10 @@ function restall() {
 enter.addEventListener('click', function() {
     funfun();
     game();
-
 })
 let resetGame = 1;
 const play = Playgame.addEventListener('click', function() {
+
     if (resetGame === 1) {
         ramdomNumber()
         Fases.innerHTML = 3;
