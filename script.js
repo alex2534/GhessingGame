@@ -2,6 +2,9 @@ const Playgame = document.querySelector('.Playgame');
 const inputNumber = document.getElementById('inputNumber');
 const ModPlaygame = document.querySelector('.ModPlaygame');
 const enter = document.querySelector('.enter');
+const enter1 = document.querySelector('.enter1');
+const enter2 = document.querySelector('.enter2');
+const enter3 = document.querySelector('.enter3')
 const low = document.querySelector('.low');
 const high = document.querySelector('.high');
 const Winner = document.querySelector('.Guess');
@@ -22,6 +25,7 @@ const tentenovament = document.querySelector('.tentenovament').value;
 const fases = document.querySelector('.fases');
 const Parabens = document.querySelector('.parabens')
 const Sbutton = document.querySelector('.Sbutton')
+
 
 function PlaygameHide() {
     document.querySelector('.Playgame').style.display = 'none';
@@ -59,17 +63,25 @@ function windowHide() {
     document.querySelector('.tente').style.display = 'none'
 }
 
-
-
+enter.disabled = true;
+cancel.disabled = true;
+enter1.disabled = true;
+enter2.disabled = true;
+enter3.disabled = true;
 enter.disabled = true;
 cancel.disabled = true;
 const guessNumber = inputNumber;
 let wongame = 0;
 let counter = 0;
 let wonNum = acertou;
-
+let ganhador1 = 0;
+let ganhador2 = 0;
+let ganhador3 = 0;
+let ganhador = 0;
 let numbers;
 let guess;
+
+
 const funfun = function() {
     Number(inputNumber);
     guess = Number(guessNumber.value)
@@ -78,9 +90,9 @@ const resetFunc = function() {
     inputNumber.textContent = inputNumber.value = ''
     low.innerText = '';
     high.innerText = '';
-    acertou.style.backgroundColor = 'rgb(230, 63, 63)'
+    // acertou.style.backgroundColor = 'rgb(230, 63, 63)'
     tentativas.textContent = tentativas.value = ''
-    Winner.textContent = '';
+        // Winner.textContent = '';
     low.innerHTML = ''
     high.innerHTML = ''
     color2.style.backgroundColor = 'rgb(230, 63, 63)'
@@ -88,24 +100,28 @@ const resetFunc = function() {
     inputNumber.textContent = inputNumber.value = '';
     enter.disabled = false;
     cancel.disabled = false;
+    enter1.disabled = false;
+    enter2.disabled = false;
+    enter3.disabled = false;
     inputNumber.focus();
     primerio.innerHTML = '';
     clickHide();
     recomecarHide();
+
+
 }
 
 function ramdomNumber() {
     document.body.style.backgroundColor = 'green';
     numbers = Math.floor(Math.random() * 10) + 1;
-    tentar = 4;
     console.log(numbers)
     resetFunc()
+
 }
 
 function SecondRandom() {
     document.body.style.backgroundColor = 'yellow'
     numbers = Math.floor(Math.random() * 20) + 1;
-    tentar = 3;
     console.log(numbers)
     resetFunc();
 
@@ -116,7 +132,6 @@ function SecondRandom() {
 function ThirdRamdom() {
     document.body.style.backgroundColor = 'red'
     numbers = Math.floor(Math.random() * 30) + 1;
-    tentar = 2;
     resetFunc();
     console.log(numbers)
 
@@ -125,16 +140,13 @@ function ThirdRamdom() {
 function fourthRancom() {
     document.body.style.backgroundColor = 'black'
     numbers = Math.floor(Math.random() * 50) + 1;
-    tentar = 1;
     resetFunc();
     console.log(numbers)
 
 }
 
-let ganhador = 1;
-let ganhador1 = 1;
-let ganhador2 = 1;
-let ganhador3 = 1;
+
+
 let tentar;
 
 for (let i = 1; i > counter + 1; i++) {
@@ -144,142 +156,19 @@ for (let i = 1; i > counter + 1; i++) {
 const desabilit = function() {
     enter.disabled = true;
     cancel.disabled = true;
+    enter1.disabled = true;
+    enter2.disabled = true;
+    enter3.disabled = true;
 }
-
-// function countdown01() {
-//     if (ganhador === 3) {
-//         Playgame.disabled = true;
-//         PlaygameShow()
-//         desabilit()
-//         recomecar();
-//         click();
-//     }
-//     if (guess === numbers) {
-//         return SecondRandom()
-
-//     }
-//     ganhador++;
-//     console.log('second function')
-//     console.log('ganhador', ganhador)
-// }
-
-
-// function countdown() {
-//     ganhador = 0;
-//     if (ganhador === 2) {
-//         console.log(ganhador)
-//         Playgame.disabled = true;
-//         PlaygameShow()
-//         desabilit()
-//         recomecar();
-//         click();
-//         resetFunc()
-//         console.log('ganhador1', ganhador1)
-
-//     } else if (guess === numbers) {
-//         return countdown1()
-
-//     }
-//     ganhador++;
-//     console.log('segunda function')
-//     console.log('ganhador1', ganhador1)
-// }
-
-
-// function countdown1() {
-//     ganhador2 = 0;
-//     if (ganhador2 === 1) {
-//         Playgame.disabled = true;
-//         PlaygameShow()
-//         desabilit()
-//         recomecar();
-//         click();
-//         resetFunc()
-//     } else if (guess === numbers) {
-//         return countdown2();
-//         console.log('quarta funciton')
-//     }
-//     ganhador2++;
-//     console.log('ga2', ganhador2)
-// }
-
-// function countdown2() {
-//     ganhador3 = 0;
-//     if (ganhador3 === 0) {
-//         Playgame.disabled = true;
-//         desabilit()
-//         recomecar();
-//         click();
-
-//     } else if (guess === numbers) {
-//         return ramdomNumber();
-
-//     }
-//     ganhador3++;
-//     console.log('ganhador3', ganhador3)
-
-// }
 
 
 function game() {
 
     tentar -= 1;
-
-
-
-
-    if (ganhador1 === 4) {
-        console.log('ganhador1', ganhador1)
-        Playgame.disabled = true;
-        PlaygameShow()
-        desabilit()
-        recomecar();
-        click();
-        ganhador1 = 1;
-        ganhador2 = 1;
-        ganhador3 = 1;
-    }
-
-
-
-    if (ganhador2 === 3) {
-        Playgame.disabled = true;
-        PlaygameShow()
-        desabilit()
-        recomecar();
-        click();
-        resetFunc()
-        console.log('ganhador2', ganhador2)
-    }
-
-
-
-    if (ganhador3 === 2) {
-        console.log('ganhador3', ganhador3)
-        Playgame.disabled = true;
-        PlaygameShow()
-        desabilit()
-        recomecar();
-        click();
-        resetFunc()
-    }
-    if (ganhador === 1) {
-        console.log('ganhador3', ganhador)
-        Playgame.disabled = true;
-        PlaygameShow()
-        desabilit()
-        recomecar();
-        click();
-        resetFunc()
-    }
-
-
     console.log(ganhador1)
     if (guess === numbers) {
         windowShow()
         Playgame.disabled = false;
-        acertou.style.backgroundColor = 'pink'
-        Winner.textContent = guess;
         low.innerHTML = ''
         high.innerHTML = ''
         color2.style.backgroundColor = 'rgb(230, 63, 63)'
@@ -304,12 +193,128 @@ function game() {
         inputNumber.focus()
 
     }
-    ganhador++;
-    ganhador1++;
-    ganhador2++;
-    ganhador3++;
 
 }
+
+function allfunction() {
+    Playgame.disabled = true;
+    desabilit();
+    recomecar();
+    restall();
+    click();
+    restallNumbers()
+}
+
+let numberMoves = 4;
+
+function countDown() {
+    numberMoves--;
+}
+FirstGame = () => {
+    countDown();
+    tentativas.style.display = 4;
+    console.log(ganhador1, 'pri')
+    ganhador1++;
+    if (ganhador1 === 4 && guess !== numbers) {
+        allfunction();
+    } else if (ganhador1 === 4 && guess === numbers) {
+        enter.style.display = 'none';
+        enter1.style.display = 'block';
+    } else if (guess === numbers) {
+        enter.style.display = 'none';
+        enter1.style.display = 'block';
+    }
+
+}
+
+segundoGame = () => {
+    ganhador2++;
+    if (ganhador2 === 3 && guess !== numbers) {
+        allfunction();
+        enter.style.display = 'block'
+        enter1.style.display = 'none'
+    } else if (ganhador2 === 3 && guess === numbers) {
+        enter1.style.display = 'none'
+        enter2.style.display = 'block'
+    } else if (guess === numbers) {
+        enter1.style.display = 'none'
+        enter2.style.display = 'block'
+
+    }
+}
+
+
+function thirdGame() {
+    ganhador3++;
+    if (ganhador3 === 2 && guess !== numbers) {
+        allfunction();
+        enter.style.display = 'block'
+        enter2.style.display = 'none'
+    } else if (ganhador3 === 3 && guess === numbers) {
+        enter.style.display = 'none'
+        enter2.style.display = 'none'
+        enter3.style.display = 'block'
+    } else if (guess === numbers) {
+        enter.style.display = 'none'
+        enter2.style.display = 'none'
+        enter3.style.display = 'block'
+
+    }
+
+};
+
+function quartoGame() {
+    ganhador++;
+    if (ganhador === 1 && guess !== numbers) {
+        allfunction();
+        enter.style.display = 'block'
+        enter1.style.display = 'none'
+        enter2.style.display = 'none'
+        enter3.style.display = 'none'
+
+    } else if (ganhador === 1 && guess === numbers) {
+        enter.style.display = 'block'
+        enter1.style.display = 'none'
+        enter2.style.display = 'none'
+        enter3.style.display = 'none'
+        enter.style.color = 'block'
+        return h5.style.color = "black"
+    } else if (guess === numbers) {
+        enter1.style.display = 'none'
+        enter2.style.display = 'none'
+        enter3.style.display = 'none'
+        enter.style.display = 'block'
+        return h5.style.color = "black"
+
+    }
+
+}
+
+enter.addEventListener('click', function() {
+    funfun();
+    game();
+    FirstGame();
+    tentativas.innerHTML = numberMoves;
+})
+enter1.addEventListener('click', function() {
+    funfun();
+    game();
+    segundoGame()
+
+
+})
+enter2.addEventListener('click', function() {
+    funfun();
+    game();
+    thirdGame();
+
+})
+enter3.addEventListener('click', function() {
+    funfun();
+    game();
+    quartoGame()
+
+})
 Sbutton.addEventListener('click', function() {
     Playgame.disabled = true;
     desabilit();
@@ -319,35 +324,51 @@ Sbutton.addEventListener('click', function() {
     recomecarHide();
     clickHide();
     ramdomNumber();
-    restall()
-
+    enter1.style.display === 'none'
 
 })
 
 function restall() {
     resetGame = 1;
     ganhador = 0;
+
+}
+
+function restallNumbers() {
+    wongame = 0;
+    counter = 0;
+    ganhador1 = 0;
+    ganhador2 = 0;
+    ganhador3 = 0;
+    ganhador = 0;
+    numberMoves = 4;
 }
 
 
-enter.addEventListener('click', function() {
-    funfun();
-    game();
-})
 let resetGame = 1;
 const play = Playgame.addEventListener('click', function() {
 
     if (resetGame === 1) {
-        ramdomNumber()
+        ramdomNumber();
         Fases.innerHTML = 3;
-        resetFunc()
+        resetFunc();
         fases.innerHTML = 'primeira';
         resetGame++;
+        tentativas.style.innerHTML = 4;
         console.log('counter', resetGame)
         Playgame.disabled = true;
         windowHide()
         recomecarHide()
-        clickHide()
+        clickHide();
+        recomecarHide();
+        clickHide();
+        clickHide();
+        restallNumbers();
+        ganhador1 = 0;
+        ganhador2 = 0;
+        ganhador3 = 0;
+
+
     } else if (resetGame === 2) {
 
         SecondRandom()

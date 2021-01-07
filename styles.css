@@ -107,6 +107,15 @@ h2 {
     text-align: center;
 }
 
+.tenta1 {
+    box-sizing: content-box;
+    border: solid 35px;
+    width: 35px;
+    background-color: wheat;
+    border: 1px;
+    text-align: center;
+}
+
 .acertou {
     box-sizing: content-box;
     border: solid 35px;
@@ -150,7 +159,22 @@ h2 {
 }
 
 .enter {
-    margin: 3px
+    margin: 3px;
+}
+
+.enter1 {
+    margin: 3px;
+    display: none;
+}
+
+.enter2 {
+    margin: 3px;
+    display: none;
+}
+
+.enter3 {
+    margin: 3px;
+    display: none;
 }
 
 .Number {
